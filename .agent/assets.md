@@ -1,0 +1,16 @@
+# Asset inventory
+
+## Live assets
+
+- `public/company-logo-mark.png` is used in the shared header and footer.
+- `public/assets/hero/children-choice-corporate-facade.png` is used as a blue architectural backdrop on the right side of the home hero.
+- `public/assets/covers/brainzo-ai-kids-learning-kit.png`, `footprints-kit-educational-box.png`, `eureka-kit-bright-learning-adventures.png`, `clario-ai-kit-fun-learning-adventures.png`, `aryavart-kit-rangin-bal-shiksha.png`, and `deepdive-kit-educational-box.png` form the six-book circular home hero display. Brainzo.ai, Eureka, and Clario.ai covers appear in the English Medium collection-card preview, with Eureka centered in front. KidsBerry, Saarthi, and Aryavart covers appear in the Hindi Medium preview. Bharat Ki Khoj, Bal Ramayana, and Bal Mahabharata appear in the Spiritual Books preview. Each card displays its three equally sized covers in a centered row on a small display base.
+- The Spiritual Books series list displays the supplied covers for Bharat Ki Khoj, Bal Ramayana, and Bal Mahabharata from `public/assets/covers/`.
+- The Lab Manuals collection card uses the layered Keylinks, Blackberry, and Monopoly cover previews from `public/assets/covers/keylinks-lab-manual.png`, `blackberry-lab-manual.png`, and `monopoly-lab-manual.png`, respectively.
+- `public/assets/brand-logos/` contains the company logo artwork used in the home page company section. The latest transparent PNG logo assets sit directly on the sky-blue company cards.
+- `public/assets/brand-logos/children-choice-publishers.png` is the transparent publisher badge shown in the primary company card. The supplied transparent PNG logos for Guider Books, Children Choice Industries, Guider Notebooks, Guider Sports, Cadenza Residences, Dehradun Molecule, and Aarambh Infra are used in the associated-company cards and blend into the sky-blue panel backgrounds.
+- `public/assets/school-logos/` contains six school crests used by the auto-scrolling logo carousel.
+- `public/assets/series-logos/` contains the supplied transparent Aryavrat, KidsBerry, Splendid, and Saarthi logos shown on the Hindi Medium series cards; the supplied transparent Brainzo.ai, Clario.ai, Keylinks, Modak, DeepDive, Eureka, Footprints, Click!, and BlueRay logos plus the existing Blackberry logo shown on the English Medium series cards; and the supplied transparent Keylinks and Monopoly logos plus the Blackberry logo shown on the Lab Manuals series cards.
+- `public/assets/order-forms/` contains the English Medium order forms for Brainzo.ai, Clario.ai, Eureka, Footprints, Click!, Keylinks, Modak, Blackberry, DeepDive, and BlueRay; the Hindi Medium order forms for Aryavrat, KidsBerry, Splendid, and Saarthi; the Lab Manuals forms for Keylinks, Blackberry, and Monopoly; and the shared Keylinks Religious Books order form used by all three Spiritual Books cards. Clicking each matching card opens its PDF in the same tab; a separate button downloads it.
+
+Use root-relative URLs for public assets, for example `/company-logo-mark.png` or `/assets/covers/brainzo-ai-kids-learning-kit.png`. Unreferenced legacy logos, duplicate PNG logos, and unused book covers have been removed. Do not store local filesystem paths in application content.

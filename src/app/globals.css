@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-navy: #101f3d;
+  --color-royal-blue: #2563eb;
+  --color-sky-blue: #8bd9f8;
+  --color-ice-blue: #eaf5ff;
+  --color-main-text: #17243b;
+  --color-muted-text: #64748b;
+  --color-border-subtle: #d8e8f5;
+
+  --font-sans: "Inter", "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Poppins", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --container-content: 80rem;
+  --spacing-section: clamp(3.5rem, 7vw, 6.5rem);
+  --radius-card: 1.25rem;
+
+  --shadow-soft: 0 8px 24px -16px rgb(16 31 61 / 20%);
+  --shadow-card: 0 18px 40px -26px rgb(16 31 61 / 24%);
+  --shadow-raised: 0 24px 56px -28px rgb(37 99 235 / 28%);
+  --shadow-button: 0 10px 24px -14px rgb(37 99 235 / 55%);
+
+  --animate-float-soft: float-soft 6s ease-in-out infinite;
+  --animate-orbit-slow: orbit-slow 48s linear infinite;
+  --animate-glow-breathe: glow-breathe 5s ease-in-out infinite;
+
+  @keyframes float-soft {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-0.5rem);
+    }
+  }
+
+  @keyframes orbit-slow {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes glow-breathe {
+    0%,
+    100% {
+      opacity: 0.45;
+      transform: scale(0.96);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.04);
+    }
+  }
+}
+
+:root {
+  color-scheme: light;
+  --layout-content-max: 80rem;
+  --layout-gutter: clamp(1.25rem, 5vw, 5rem);
+  --duration-fast: 160ms;
+  --duration-standard: 240ms;
+  --duration-emphasis: 360ms;
+}
+
+@utility page-container {
+  width: min(calc(100% - 2 * var(--layout-gutter)), var(--layout-content-max));
+  margin-inline: auto;
+}
+
+@utility section-spacing {
+  padding-block: var(--spacing-section);
+}
+
+@utility surface-card {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card);
+  background: rgb(255 255 255 / 88%);
+  box-shadow: var(--shadow-card);
+}
+
+@utility surface-panel {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: calc(var(--radius-card) * 1.25);
+  background: linear-gradient(145deg, rgb(255 255 255 / 96%), rgb(234 245 255 / 92%));
+  box-shadow: var(--shadow-soft);
+}
+
+@utility button-primary {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  background: var(--color-royal-blue);
+  padding: 0.75rem 1.25rem;
+  color: var(--color-white);
+  font-weight: 600;
+  box-shadow: var(--shadow-button);
+  transition: background-color var(--duration-standard), box-shadow var(--duration-standard), transform var(--duration-standard);
+
+  &:hover {
+    transform: translateY(-1px);
+    background: var(--color-primary-navy);
+    box-shadow: var(--shadow-raised);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--color-sky-blue);
+    outline-offset: 3px;
+  }
+}
+
+@utility button-secondary {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 9999px;
+  background: var(--color-white);
+  padding: 0.75rem 1.25rem;
+  color: var(--color-primary-navy);
+  font-weight: 600;
+  transition: border-color var(--duration-standard), background-color var(--duration-standard), color var(--duration-standard);
+
+  &:hover {
+    border-color: var(--color-royal-blue);
+    background: var(--color-ice-blue);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--color-sky-blue);
+    outline-offset: 3px;
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    background: var(--color-white);
+    color: var(--color-main-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--font-display);
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
